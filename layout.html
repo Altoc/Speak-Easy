@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    {% if title %}
+    <title>SpeakEasy - {{ title }}</title>
+    {% else %}
+    <title>SpeakEasy</title>
+    {% endif %}
+    <title></title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jquery-form/form@4.2.2/dist/jquery.form.min.js"></script>
+    <!-- <script src="{{ url_for('static', filename='js/socket.js') }}"></script> -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block chat_room_imports %}{% endblock chat_room_imports %}
+
+    <script>
+     // CHAT ROOM TOGGLE BUTTON FUNCTION
+	 /*$(document).ready(function () {
+      $("#menu_toggle").click( function () {
+        if ($("#sidebar").width() == 250) {
+          $("#sidebar").css({"width":"0px"});
+          $("#main").css({"margin-left":"0px"});
+        }
+        if ($("#sidebar").width() == 0) {
+          $("#sidebar").css({"width":"250px"});
+          $("#main").css({"margin-left":"250px"});
+        } 
+      });
+    });*/
+  </script>
+
+  </head>
+  <body>
+    
+	<!-- CHAT ROOMS AND TOGGLE BUTTON -->
+    <!-- <div id="navbar">
+      <button type="button" id="menu_toggle">Toggle</button>
+    </div>
+    
+     <div id="sidebar">
+      <p id="menu_header"> Rooms In Your Area </p>
+      <p class="room_item"> test room </p>
+      <p class="room_item"> test room </p>
+      <p class="room_item"> test room </p>
+    </div> -->
+    
+    <div id="main">
+	  <div id="logo_01">
+	    <img src="../static/Images/speak_easy_logo_01.jpg" width="128" height="128"/>
+	  </div>
+	  
+	  <div id="chat_title">
+        <h1>Global Chat</h1>
+		<!-- <img src="../static/Images/speak_easy_logo_02.jpg" width="358" height="128"/> -->
+      </div>
+	  
+      {% block chat_room %}{% endblock chat_room %}
+
+    </div>
+
+  </body>
+</html>
