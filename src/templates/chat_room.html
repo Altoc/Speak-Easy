@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block chat_room_imports %}
+<script src="{{ url_for('static', filename='js/chat_room.js') }}"></script>
+
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Limelight" />
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat_room.css') }}">
+{% endblock chat_room_imports %}
+
+{% block chat_room %}
+<div id="chat_div">
+	<div id="total_users_div">
+		<span>Users In Area: </span><span id="user_count">1</span>		
+	</div>
+	<div id="msg_list">
+	</div>
+	<textarea id="post" name="post" rows="2"></textarea>
+	<button type="button" id="submit_post_btn">Send</button>
+</div>
+{% endblock chat_room %}
